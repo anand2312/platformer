@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cajn1a1efy014"]
+
+[ext_resource type="Script" path="res://scripts/next_level.gd" id="1_f6wvo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_268wf"]
+size = Vector2(52, 88)
+
+[node name="NextLevel" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_f6wvo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16, 34)
+shape = SubResource("RectangleShape2D_268wf")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

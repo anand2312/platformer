@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7ngbmg8up4xv"]
+
+[ext_resource type="FontFile" uid="uid://dprc6qji401ip" path="res://assets/fonts/PixelOperator8.ttf" id="1_08pms"]
+[ext_resource type="Script" path="res://scripts/end_menu.gd" id="1_k0fjt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ou7k8"]
+font = ExtResource("1_08pms")
+font_size = 48
+
+[node name="EndMenu" type="Node2D"]
+script = ExtResource("1_k0fjt")
+
+[node name="Menu" type="Label" parent="."]
+offset_left = 456.0
+offset_top = 175.0
+offset_right = 695.0
+offset_bottom = 223.0
+text = "Menu"
+label_settings = SubResource("LabelSettings_ou7k8")
+horizontal_alignment = 1
+
+[node name="Restart" type="Button" parent="."]
+offset_left = 444.0
+offset_top = 264.0
+offset_right = 697.0
+offset_bottom = 312.0
+theme_override_fonts/font = ExtResource("1_08pms")
+theme_override_font_sizes/font_size = 24
+text = "Restart"
+
+[node name="LB" type="Button" parent="."]
+offset_left = 444.0
+offset_top = 333.0
+offset_right = 701.0
+offset_bottom = 385.0
+theme_override_fonts/font = ExtResource("1_08pms")
+theme_override_font_sizes/font_size = 24
+disabled = true
+text = "Leaderboard"
+
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
